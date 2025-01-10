@@ -1,0 +1,9 @@
+# Python cache
+__pycache__/
+
+# Pytest cache
+.pytest_cache/
+
+# Any log files
+log/
+*.log
