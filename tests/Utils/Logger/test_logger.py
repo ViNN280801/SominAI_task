@@ -1,5 +1,3 @@
-#! python3.13
-
 import os
 import pytest
 from Utils.Logger import Logger, LogLevel
