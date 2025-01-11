@@ -28,12 +28,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Set environment variables
-        env:
-          KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
-          KCHAT_ID: ${{ secrets.__KCHAT_ID }}
         run: |
-          echo "Environment variables for the telegram are set"
-          
+          echo "KBOT_TOKEN=${{ secrets.__KBOT_TOKEN }}" >> $GITHUB_ENV
+          echo "KCHAT_ID=${{ secrets.__KCHAT_ID }}" >> $GITHUB_ENV
+
       - name: Run tests
         env:
           KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
