@@ -1,19 +1,15 @@
 import pytest
+from os import getenv
 from unittest.mock import patch
 from Utils.AlertHandler import AlertHandler, AlertDestination
 
-__KBOT_TOKEN = "" # Your bot token here
-__KCHAT_ID = "" # Your chat ID here
+__KBOT_TOKEN = getenv("__KBOT_TOKEN", "")
+__KCHAT_ID = getenv("__KCHAT_ID", "")
 
 
 @pytest.fixture
 def mock_config():
-    return {
-        "telegram": {
-            "bot_token": __KBOT_TOKEN,
-            "chat_id": __KCHAT_ID
-        }
-    }
+    return {"telegram": {"bot_token": __KBOT_TOKEN, "chat_id": __KCHAT_ID}}
 
 
 @pytest.fixture
@@ -25,13 +21,13 @@ def alert_handler(mock_config):
 def test_send_alert_telegram_success(mock_post, alert_handler):
     """Test sending a message to Telegram successfully."""
     mock_post.return_value.status_code = 200
-    mock_post.return_value.text = "{\"ok\":true}"
+    mock_post.return_value.text = '{"ok":true}'
 
     alert_handler.send_alert(AlertDestination.TELEGRAM, "Test message")
 
     mock_post.assert_called_once_with(
         f"https://api.telegram.org/bot{__KBOT_TOKEN}/sendMessage",
-        data={"chat_id": __KCHAT_ID, "text": "Test message"}
+        data={"chat_id": __KCHAT_ID, "text": "Test message"},
     )
 
 
@@ -56,20 +52,23 @@ def test_monitor_services(mock_send_to_monitoring, alert_handler):
     services_state = {
         "service_a": "ok",
         "service_b": "error: database connection lost",
-        "service_c": "ok"
+        "service_c": "ok",
     }
 
     with patch.object(alert_handler, "send_alert") as mock_send_alert:
         alert_handler.monitor_services(services_state)
 
         mock_send_alert.assert_any_call(
-            AlertDestination.TELEGRAM, "Service service_b encountered an error: database connection lost."
+            AlertDestination.TELEGRAM,
+            "Service service_b encountered an error: database connection lost.",
         )
         mock_send_alert.assert_any_call(
-            AlertDestination.LOGGING, "Service service_b encountered an error: database connection lost."
+            AlertDestination.LOGGING,
+            "Service service_b encountered an error: database connection lost.",
         )
         mock_send_alert.assert_any_call(
-            AlertDestination.MONITORING, "Service service_b encountered an error: database connection lost."
+            AlertDestination.MONITORING,
+            "Service service_b encountered an error: database connection lost.",
         )
         assert mock_send_alert.call_count == 3
 
@@ -134,8 +133,7 @@ def test_send_alert_invalid_destination(mock_log_error, alert_handler):
     """Test handling an invalid alert destination."""
     alert_handler.send_alert("INVALID", "Test message")
 
-    mock_log_error.assert_called_once_with(
-        "Unsupported alert destination: INVALID")
+    mock_log_error.assert_called_once_with("Unsupported alert destination: INVALID")
 
 
 @patch("requests.post")

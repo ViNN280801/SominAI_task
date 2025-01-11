@@ -1,4 +1,5 @@
 import os
+import sys
 import pytest
 
 
@@ -11,7 +12,10 @@ def main():
 
     # Run pytest on all test files recursively
     pytest_args = [root_dir]
-    pytest.main(pytest_args)
+    exit_code = pytest.main(pytest_args)
+
+    # Exit with the pytest exit code
+    sys.exit(exit_code)
 
 
 if __name__ == "__main__":

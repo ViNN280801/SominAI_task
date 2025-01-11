@@ -8,7 +8,8 @@ from unittest.mock import patch
 def configure_logger():
     """Fixture to configure the logger before each test."""
     Logger.configure_logger(
-        name="TestLogger", log_file="test.log", level=LogLevel.DEBUG)
+        name="TestLogger", log_file="test.log", level=LogLevel.DEBUG
+    )
     yield
     Logger._logger = None  # Reset the logger after each test
     if os.path.exists("test.log"):
@@ -92,8 +93,9 @@ def test_log_error_with_non_string_message(configure_logger):
 def test_configure_logger_with_invalid_level():
     """Test logger configuration with an invalid log level."""
     with pytest.raises(ValueError, match="Invalid log level: INVALID_LEVEL"):
-        Logger.configure_logger(name="InvalidLevelLogger",
-                                log_file="invalid.log", level="INVALID_LEVEL")  # type: ignore
+        Logger.configure_logger(
+            name="InvalidLevelLogger", log_file="invalid.log", level="INVALID_LEVEL"  # type: ignore
+        )
 
 
 def test_log_info_with_none_message(configure_logger):
@@ -118,7 +120,8 @@ def test_configure_logger_with_nonexistent_file_path():
     invalid_path = "/nonexistent/path/test.log"
     with pytest.raises(PermissionError):
         Logger.configure_logger(
-            name="TestLogger", log_file=invalid_path, level=LogLevel.DEBUG)
+            name="TestLogger", log_file=invalid_path, level=LogLevel.DEBUG
+        )
 
 
 def test_log_to_unconfigured_logger():
@@ -140,8 +143,7 @@ def test_log_error_with_huge_message(configure_logger):
 def test_log_with_incorrect_method_call():
     """Test calling a non-existent logging method."""
     with pytest.raises(AttributeError):
-        Logger.log_invalid_attibute(  # type: ignore
-            "This method does not exist")
+        Logger.log_invalid_attibute("This method does not exist")  # type: ignore
 
 
 def test_log_with_binary_message(configure_logger):
@@ -164,7 +166,8 @@ def test_logger_creates_log_directory():
 
     Logger.configure_logger(name="TestLogger")
     assert os.path.exists(log_dir) and os.path.isdir(
-        log_dir), "log/ directory was not created."
+        log_dir
+    ), "log/ directory was not created."
 
     for file in os.listdir(log_dir):
         os.remove(os.path.join(log_dir, file))
@@ -182,9 +185,11 @@ def test_logger_log_directory_not_empty():
 
     Logger.configure_logger(name="TestLogger")
     assert os.path.exists(log_dir) and os.path.isdir(
-        log_dir), "log/ directory was not created."
-    assert len(os.listdir(log_dir)
-               ) > 0, "log/ directory is empty, log file was not created."
+        log_dir
+    ), "log/ directory was not created."
+    assert (
+        len(os.listdir(log_dir)) > 0
+    ), "log/ directory is empty, log file was not created."
 
     for file in os.listdir(log_dir):
         os.remove(os.path.join(log_dir, file))

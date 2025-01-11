@@ -103,8 +103,7 @@ def test_handle_exception_logs_correctly():
     context = {"path": "/integration", "method": "PATCH"}
     filepath = "integration.log"
 
-    Logger.configure_logger(
-        name="TestLogger", log_file=filepath, level=LogLevel.ERROR)
+    Logger.configure_logger(name="TestLogger", log_file=filepath, level=LogLevel.ERROR)
 
     with patch.object(Logger, "log_error") as mock_log_error:
         ExceptionHandler.handle_exception(exception, context)
@@ -122,8 +121,7 @@ def test_handle_exception_with_logger_file():
     context = {"path": "/file", "method": "DELETE"}
     filepath = "file_test.log"
 
-    Logger.configure_logger(
-        name="FileLogger", log_file=filepath, level=LogLevel.ERROR)
+    Logger.configure_logger(name="FileLogger", log_file=filepath, level=LogLevel.ERROR)
     ExceptionHandler.handle_exception(exception, context)
 
     with open(filepath, "r") as log_file:
@@ -133,7 +131,9 @@ def test_handle_exception_with_logger_file():
         "Exception: KeyError. Message: 'Integration test to log into file.'. "
         "Context: {'path': '/file', 'method': 'DELETE'}"
     )
-    assert expected_message in logs, f"Expected message not found in logs: {
+    assert (
+        expected_message in logs
+    ), f"Expected message not found in logs: {
         logs}"
 
     file_cleaner(filepath)
@@ -146,7 +146,8 @@ def test_handle_exception_with_logger_levels():
     filepath = "level_test.log"
 
     Logger.configure_logger(
-        name="LevelLogger", log_file=filepath, level=LogLevel.WARNING)
+        name="LevelLogger", log_file=filepath, level=LogLevel.WARNING
+    )
 
     with patch.object(Logger, "log_error") as mock_log_error:
         ExceptionHandler.handle_exception(exception, context)

@@ -1,5 +1,4 @@
-name: Run Tests on Multiple Python Versions
-
+name: Run Tests
 on:
   push:
     branches:
@@ -13,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+        python-version: ["3.12", "3.13"]
 
     steps:
       - name: Checkout repository
@@ -28,6 +27,16 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Set environment variables
+        env:
+          KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
+          KCHAT_ID: ${{ secrets.__KCHAT_ID }}
+        run: |
+          echo "Environment variables for the telegram are set"
+          
       - name: Run tests
+        env:
+          KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
+          KCHAT_ID: ${{ secrets.__KCHAT_ID }}
         run: |
           python run_tests.py

@@ -61,7 +61,8 @@ class Logger:
         # Ensure the path is not a directory
         if os.path.isdir(log_file):
             raise IsADirectoryError(
-                f"Path points to a directory, not a file: {log_file}")
+                f"Path points to a directory, not a file: {log_file}"
+            )
 
         # Ensure the directory is writable
         if not os.access(directory, os.W_OK):
@@ -82,11 +83,15 @@ class Logger:
         try:
             return str(message)
         except Exception as e:
-            raise TypeError(f"Message cannot be converted to string: {
-                            message}") from e
+            raise TypeError(
+                f"Message cannot be converted to string: {
+                            message}"
+            ) from e
 
     @classmethod
-    def configure_logger(cls, name: str, log_file: str | None = None, level: LogLevel = LogLevel.INFO) -> None:
+    def configure_logger(
+        cls, name: str, log_file: str | None = None, level: LogLevel = LogLevel.INFO
+    ) -> None:
         """
         Configures the logger with a specific name, log file, and logging level.
 

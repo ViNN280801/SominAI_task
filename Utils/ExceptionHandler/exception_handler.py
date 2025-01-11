@@ -12,6 +12,7 @@ class ExceptionHandler:
     Methods:
         - handle_exception: Handles and formats an exception into a unified response.
     """
+
     @staticmethod
     def handle_exception(exc: Exception, context: dict) -> dict:
         """
@@ -24,27 +25,30 @@ class ExceptionHandler:
         :raises ValueError: If `context` does not contain required keys or has invalid values.
         """
         if not isinstance(exc, Exception):
-            raise TypeError(f"`exc` must be an instance of Exception, got {
-                            type(exc).__name__}")
+            raise TypeError(
+                f"`exc` must be an instance of Exception, got {
+                    type(exc).__name__}"
+            )
 
         if not isinstance(context, dict):
-            raise TypeError(f"`context` must be a dictionary, got {
-                            type(context).__name__}")
+            raise TypeError(
+                f"`context` must be a dictionary, got {type(context).__name__}"
+            )
 
         required_keys = {"path", "method"}
         missing_keys = required_keys - context.keys()
         if missing_keys:
-            raise ValueError(
-                f"`context` is missing required keys: {missing_keys}")
+            raise ValueError(f"`context` is missing required keys: {missing_keys}")
 
         if not isinstance(context.get("path"), str) or not context["path"]:
-            raise ValueError(f"`context['path']` must be a non-empty string.")
+            raise ValueError(f"{context['path']} must be a non-empty string.")
         if not isinstance(context.get("method"), str) or not context["method"]:
-            raise ValueError(
-                f"`context['method']` must be a non-empty string.")
+            raise ValueError(f"{context['method']} must be a non-empty string.")
 
-        Logger.log_error(f"Exception: {type(exc).__name__}. Message: {
-                         str(exc)}. Context: {context}")
+        Logger.log_error(
+            f"Exception: {type(exc).__name__}. Message: {
+                str(exc)}. Context: {context}"
+        )
 
         return {
             "error": {

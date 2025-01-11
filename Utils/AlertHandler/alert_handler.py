@@ -35,8 +35,7 @@ class AlertHandler:
             raise Exception("This class is a singleton! Use get_instance().")
         self.config = config
         self.logger = Logger
-        self.logger.configure_logger(
-            name="AlertHandler", level=LogLevel.INFO)
+        self.logger.configure_logger(name="AlertHandler", level=LogLevel.INFO)
 
     def monitor_services(self, services: dict):
         """
@@ -47,8 +46,9 @@ class AlertHandler:
         for service_name, state in services.items():
             if state.startswith("error"):
                 # Extract reason if provided (e.g., "error: reason")
-                reason = state.split(": ", 1)[
-                    1] if ": " in state else "unspecified issue"
+                reason = (
+                    state.split(": ", 1)[1] if ": " in state else "unspecified issue"
+                )
                 message = f"Service {
                     service_name} encountered an error: {reason}."
                 self.logger.log_info(
@@ -72,27 +72,27 @@ class AlertHandler:
         elif destination == AlertDestination.LOGGING:
             self._log_alert(message)
         else:
-            self.logger.log_error(
-                f"Unsupported alert destination: {destination}")
+            self.logger.log_error(f"Unsupported alert destination: {destination}")
 
     def _send_to_monitoring(self, message: str) -> None:
-        """ Sending to monitoring services logic. """
+        """Sending to monitoring services logic."""
         pass
 
     def _send_to_telegram(self, message: str) -> None:
         bot_token = self.config.get("telegram", {}).get("bot_token")
         chat_id = self.config.get("telegram", {}).get("chat_id")
         if not bot_token or not chat_id:
-            self.logger.log_error(
-                "Telegram bot token or chat ID not configured.")
+            self.logger.log_error("Telegram bot token or chat ID not configured.")
             return
         try:
             url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
             payload = {"chat_id": chat_id, "text": message}
             self.logger.log_info(f"Sending message to Telegram: {message}")
             response = requests.post(url, data=payload)
-            self.logger.log_info(f"Telegram response: {
-                                 response.status_code} - {response.text}")
+            self.logger.log_info(
+                f"Telegram response: {
+                                 response.status_code} - {response.text}"
+            )
             response.raise_for_status()
         except Exception as e:
             self.logger.log_error(f"Failed to send message to Telegram: {e}")
