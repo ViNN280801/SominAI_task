@@ -31,10 +31,16 @@ jobs:
         run: |
           echo "KBOT_TOKEN=${{ secrets.__KBOT_TOKEN }}" >> $GITHUB_ENV
           echo "KCHAT_ID=${{ secrets.__KCHAT_ID }}" >> $GITHUB_ENV
+      
+      - name: Debug secrets
+        run: |
+          echo "KBOT_TOKEN=${{ secrets.__KBOT_TOKEN }}"
+          echo "KCHAT_ID=${{ secrets.__KCHAT_ID }}"
 
       - name: Run tests
         env:
           KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
           KCHAT_ID: ${{ secrets.__KCHAT_ID }}
         run: |
+          python -c "import os; print('KBOT_TOKEN:', os.getenv('KBOT_TOKEN')); print('KCHAT_ID:', os.getenv('KCHAT_ID'))"
           python run_tests.py
