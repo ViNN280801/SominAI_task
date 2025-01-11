@@ -38,13 +38,13 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "KBOT_TOKEN=${{ secrets.__KBOT_TOKEN }}" >> $GITHUB_ENV
-          echo "KCHAT_ID=${{ secrets.__KCHAT_ID }}" >> $GITHUB_ENV
+          echo "__KBOT_TOKEN=${{ secrets.__KBOT_TOKEN }}" >> $GITHUB_ENV
+          echo "__KCHAT_ID=${{ secrets.__KCHAT_ID }}" >> $GITHUB_ENV
 
       - name: Run tests with script
         env:
-          KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
-          KCHAT_ID: ${{ secrets.__KCHAT_ID }}
+          __KBOT_TOKEN: ${{ secrets.__KBOT_TOKEN }}
+          __KCHAT_ID: ${{ secrets.__KCHAT_ID }}
         run: |
           python run_tests.py
 
