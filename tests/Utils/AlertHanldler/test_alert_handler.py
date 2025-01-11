@@ -1,3 +1,4 @@
+import sys
 import pytest
 from os import getenv
 from unittest.mock import patch
@@ -5,6 +6,11 @@ from Utils.AlertHandler import AlertHandler, AlertDestination
 
 __KBOT_TOKEN = getenv("__KBOT_TOKEN", "")
 __KCHAT_ID = getenv("__KCHAT_ID", "")
+
+if not __KBOT_TOKEN or not __KCHAT_ID:
+    print("Error: Required secret environment variables are missing.")
+    print("Ensure that '__KBOT_TOKEN' and '__KCHAT_ID' are set correctly.")
+    sys.exit(1)
 
 
 @pytest.fixture
