@@ -1,0 +1,110 @@
+\doxysection{Somin\+AI.\+modules.\+alert\+\_\+handler.\+alert\+\_\+handler.\+Alert\+Handler Class Reference}
+\hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler}{}\label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler}\index{SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a33008dd35dfaf0ea5339689ba29ca96e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, dict config)
+\item 
+\mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a2e9001f05ee9376a91aa90507eccaa4c}{monitor\+\_\+services}} (self, dict services)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a95209f8ccd49375955bcc3a5655a12b3}{send\+\_\+alert}} (self, \mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__destination_1_1AlertDestination}{Alert\+Destination}} destination, str message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a139a27cf5d0f7cbbcc280c64a73ef509}{get\+\_\+instance}} (dict config)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_ae02758219426b77edcef39a203beb8d6}\label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_ae02758219426b77edcef39a203beb8d6} 
+{\bfseries config} = config
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a018fc46cdb3716b3daa0d8541ea08144}\label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a018fc46cdb3716b3daa0d8541ea08144} 
+{\bfseries logger} = \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}{Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_ab27870b30807fcd6ed352ea09790aa7b}{\+\_\+send\+\_\+to\+\_\+monitoring}} (self, str message)
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a073cb5a9ab3242f13aa7e64993b0b5f3}\label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a073cb5a9ab3242f13aa7e64993b0b5f3} 
+None {\bfseries \+\_\+send\+\_\+to\+\_\+telegram} (self, str message)
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_aea322af350dd73faf519b456de82e46a}\label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_aea322af350dd73faf519b456de82e46a} 
+None {\bfseries \+\_\+log\+\_\+alert} (self, str message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a47358d03c8f927791daaa41ef2c09953}\label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a47358d03c8f927791daaa41ef2c09953} 
+{\bfseries \+\_\+instance} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A universal alert handler that supports multiple notification channels.
+
+This handler initializes once and monitors the state of services. If a signal
+is detected from any service, it sends an alert to the specified destination.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a33008dd35dfaf0ea5339689ba29ca96e}\index{SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a33008dd35dfaf0ea5339689ba29ca96e} 
+Somin\+AI.\+modules.\+alert\+\_\+handler.\+alert\+\_\+handler.\+Alert\+Handler.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{dict}]{config}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the alert handler.
+
+:param config: Configuration dictionary for notification channels.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_ab27870b30807fcd6ed352ea09790aa7b}\index{SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}!\_send\_to\_monitoring@{\_send\_to\_monitoring}}
+\index{\_send\_to\_monitoring@{\_send\_to\_monitoring}!SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}}
+\doxysubsubsection{\texorpdfstring{\_send\_to\_monitoring()}{\_send\_to\_monitoring()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_ab27870b30807fcd6ed352ea09790aa7b} 
+ None Somin\+AI.\+modules.\+alert\+\_\+handler.\+alert\+\_\+handler.\+Alert\+Handler.\+\_\+send\+\_\+to\+\_\+monitoring (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Sending to monitoring services logic.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a139a27cf5d0f7cbbcc280c64a73ef509}\index{SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a139a27cf5d0f7cbbcc280c64a73ef509} 
+Somin\+AI.\+modules.\+alert\+\_\+handler.\+alert\+\_\+handler.\+Alert\+Handler.\+get\+\_\+instance (\begin{DoxyParamCaption}\item[{dict}]{config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Returns the singleton instance of the AlertHandler.
+
+:param config: Configuration dictionary for notification channels.
+:return: The AlertHandler singleton instance.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a2e9001f05ee9376a91aa90507eccaa4c}\index{SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}!monitor\_services@{monitor\_services}}
+\index{monitor\_services@{monitor\_services}!SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}}
+\doxysubsubsection{\texorpdfstring{monitor\_services()}{monitor\_services()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a2e9001f05ee9376a91aa90507eccaa4c} 
+Somin\+AI.\+modules.\+alert\+\_\+handler.\+alert\+\_\+handler.\+Alert\+Handler.\+monitor\+\_\+services (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{dict}]{services}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Monitors the state of services and triggers alerts if any service sends a signal.
+
+:param services: Dictionary of services and their states.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a95209f8ccd49375955bcc3a5655a12b3}\index{SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}!send\_alert@{send\_alert}}
+\index{send\_alert@{send\_alert}!SominAI.modules.alert\_handler.alert\_handler.AlertHandler@{SominAI.modules.alert\_handler.alert\_handler.AlertHandler}}
+\doxysubsubsection{\texorpdfstring{send\_alert()}{send\_alert()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a95209f8ccd49375955bcc3a5655a12b3} 
+ None Somin\+AI.\+modules.\+alert\+\_\+handler.\+alert\+\_\+handler.\+Alert\+Handler.\+send\+\_\+alert (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{\mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__destination_1_1AlertDestination}{Alert\+Destination}}}]{destination}{, }\item[{str}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends an alert to the specified destination.
+
+:param destination: Alert destination from AlertDestination enum.
+:param message: Message text to be sent.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modules/alert\+\_\+handler/alert\+\_\+handler.\+py\end{DoxyCompactItemize}

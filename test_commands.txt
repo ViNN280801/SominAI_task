@@ -1,0 +1,2 @@
+curl -X POST http://localhost:8000/crawl -H "Content-Type: application/json" -d '{"keyword": "house"}'
+curl http://localhost:8000/result/<task_id that u can got from terminal after comand above>

@@ -1,0 +1,66 @@
+\doxysection{Somin\+AI.\+core.\+result\+\_\+processor.\+Result\+Processor Class Reference}
+\hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor}{}\label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor}\index{SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a6c8645bdcc383d1c76c080c48ceffa53}\label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a6c8645bdcc383d1c76c080c48ceffa53} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str rabbit\+\_\+config\+\_\+path, str redis\+\_\+config\+\_\+path, dict alert\+\_\+config)
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a2323a967c50977d05cdc22ab879c084b}{connect}} (self)
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a6ef4820015954454391a6373c9b77c54}{process\+\_\+results}} (self)
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a80f7d532f51159cc16ad89e3058b5ae0}{close}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a4f2f1e439ac0161c16b8635a321c94c5}\label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a4f2f1e439ac0161c16b8635a321c94c5} 
+{\bfseries redis\+\_\+manager} = \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager}{Redis\+Manager}}(redis\+\_\+config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a734116a5c0b74f815afdb1ab8e6e0e8a}\label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a734116a5c0b74f815afdb1ab8e6e0e8a} 
+{\bfseries rabbit\+\_\+publisher} = \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher}{Rabbit\+MQPublisher}}(rabbit\+\_\+config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a88ce4d1ed5298e187519eb0d1b18800a}\label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a88ce4d1ed5298e187519eb0d1b18800a} 
+{\bfseries alert\+\_\+handler} = \mbox{\hyperlink{classSominAI_1_1modules_1_1alert__handler_1_1alert__handler_1_1AlertHandler_a139a27cf5d0f7cbbcc280c64a73ef509}{Alert\+Handler.\+get\+\_\+instance}}(alert\+\_\+config)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_ad30d84e4308bfdbe69c893e65be04eeb}\label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_ad30d84e4308bfdbe69c893e65be04eeb} 
+str {\bfseries result\+\_\+queue} = "{}crawler.\+result"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Asynchronously processes completed tasks from the `crawler.result` queue.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a80f7d532f51159cc16ad89e3058b5ae0}\index{SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}!close@{close}}
+\index{close@{close}!SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a80f7d532f51159cc16ad89e3058b5ae0} 
+Somin\+AI.\+core.\+result\+\_\+processor.\+Result\+Processor.\+close (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Closes connections to RabbitMQ and Redis.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a2323a967c50977d05cdc22ab879c084b}\index{SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}!connect@{connect}}
+\index{connect@{connect}!SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a2323a967c50977d05cdc22ab879c084b} 
+Somin\+AI.\+core.\+result\+\_\+processor.\+Result\+Processor.\+connect (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Establishes connections to RabbitMQ and Redis.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a6ef4820015954454391a6373c9b77c54}\index{SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}!process\_results@{process\_results}}
+\index{process\_results@{process\_results}!SominAI.core.result\_processor.ResultProcessor@{SominAI.core.result\_processor.ResultProcessor}}
+\doxysubsubsection{\texorpdfstring{process\_results()}{process\_results()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1result__processor_1_1ResultProcessor_a6ef4820015954454391a6373c9b77c54} 
+Somin\+AI.\+core.\+result\+\_\+processor.\+Result\+Processor.\+process\+\_\+results (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Processes results from the RabbitMQ result queue asynchronously.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/result\+\_\+processor.\+py\end{DoxyCompactItemize}

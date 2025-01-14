@@ -1,0 +1,12 @@
+app:
+  mode: production
+  host: 0.0.0.0
+  port: 8000
+
+default_region: all # Default all regions for TikTok Library searches
+
+redis:
+  host: redis
+  port: 6379
+  db: 0
+  password: null

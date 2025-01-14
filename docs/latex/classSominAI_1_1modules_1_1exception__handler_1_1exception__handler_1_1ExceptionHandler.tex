@@ -1,0 +1,37 @@
+\doxysection{Somin\+AI.\+modules.\+exception\+\_\+handler.\+exception\+\_\+handler.\+Exception\+Handler Class Reference}
+\hypertarget{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler}{}\label{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler}\index{SominAI.modules.exception\_handler.exception\_handler.ExceptionHandler@{SominAI.modules.exception\_handler.exception\_handler.ExceptionHandler}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler_abb3405a0ad289f30a0328f36de385808}{handle\+\_\+exception}} (Exception exc, dict context)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A centralized handler for exceptions in a SaaS environment.
+
+This class handles exceptions, logs them using the Logger, and formats a unified
+response structure for error handling. In an HTTP context, 'path' and 'method' can
+be provided; otherwise, default values are used.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler_abb3405a0ad289f30a0328f36de385808}\index{SominAI.modules.exception\_handler.exception\_handler.ExceptionHandler@{SominAI.modules.exception\_handler.exception\_handler.ExceptionHandler}!handle\_exception@{handle\_exception}}
+\index{handle\_exception@{handle\_exception}!SominAI.modules.exception\_handler.exception\_handler.ExceptionHandler@{SominAI.modules.exception\_handler.exception\_handler.ExceptionHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_exception()}{handle\_exception()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler_abb3405a0ad289f30a0328f36de385808} 
+ dict Somin\+AI.\+modules.\+exception\+\_\+handler.\+exception\+\_\+handler.\+Exception\+Handler.\+handle\+\_\+exception (\begin{DoxyParamCaption}\item[{Exception}]{exc}{, }\item[{dict}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Handles an exception and formats a unified response.
+
+:param exc: Exception to handle.
+:param context: Additional context, e.g., request details.
+:return: Unified error response.
+:raises TypeError: If `exc` is not an instance of Exception or `context` is not a dictionary.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modules/exception\+\_\+handler/exception\+\_\+handler.\+py\end{DoxyCompactItemize}

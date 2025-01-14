@@ -1,0 +1,79 @@
+\doxysection{Somin\+AI.\+crawler.\+crawler.\+Crawler Class Reference}
+\hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler}{}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler}\index{SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a5de96806f77a93812fceb3a35cb2bcd3}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a5de96806f77a93812fceb3a35cb2bcd3} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str rabbit\+\_\+config\+\_\+path, str redis\+\_\+config\+\_\+path)
+\item 
+\mbox{\hyperlink{classSominAI_1_1crawler_1_1crawler_1_1Crawler_aee902dfbc8fb52549d167d9623f1f8c9}{connect}} (self)
+\item 
+\mbox{\hyperlink{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a87199a9a435bb917d874dfebf2af6cc7}{process\+\_\+task}} (self, dict message)
+\item 
+\mbox{\hyperlink{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a27d475064a80fd56ab776dae99dfd151}{consume\+\_\+tasks}} (self)
+\item 
+\mbox{\hyperlink{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a9e45bdca9d24586f2be26fc911f1a165}{close}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a9fd57d4b944a3593bc2cd71ad56e144b}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a9fd57d4b944a3593bc2cd71ad56e144b} 
+{\bfseries rabbit\+\_\+publisher} = \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher}{Rabbit\+MQPublisher}}(rabbit\+\_\+config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_ac6e1091caa403e1435eff275008ee6bd}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_ac6e1091caa403e1435eff275008ee6bd} 
+{\bfseries redis\+\_\+manager} = \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager}{Redis\+Manager}}(redis\+\_\+config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_ae8860b6f70359f06561a9d23483cf827}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_ae8860b6f70359f06561a9d23483cf827} 
+{\bfseries parser} = \mbox{\hyperlink{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser}{Tik\+Tok\+Library\+Parser}}()
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a2993c0c631a99d1b98cb16c0e4ce0caf}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a2993c0c631a99d1b98cb16c0e4ce0caf} 
+str {\bfseries task\+\_\+queue} = "{}crawler.\+task"{}
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_aa07bd4fe84b06adcb5b2858732431fc2}\label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_aa07bd4fe84b06adcb5b2858732431fc2} 
+str {\bfseries result\+\_\+queue} = "{}crawler.\+result"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Asynchronously consumes tasks from RabbitMQ, processes data, and publishes results.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a9e45bdca9d24586f2be26fc911f1a165}\index{SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}!close@{close}}
+\index{close@{close}!SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a9e45bdca9d24586f2be26fc911f1a165} 
+Somin\+AI.\+crawler.\+crawler.\+Crawler.\+close (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Closes connections to RabbitMQ and Redis.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_aee902dfbc8fb52549d167d9623f1f8c9}\index{SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}!connect@{connect}}
+\index{connect@{connect}!SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_aee902dfbc8fb52549d167d9623f1f8c9} 
+Somin\+AI.\+crawler.\+crawler.\+Crawler.\+connect (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Establishes connections to RabbitMQ and Redis.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a27d475064a80fd56ab776dae99dfd151}\index{SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}!consume\_tasks@{consume\_tasks}}
+\index{consume\_tasks@{consume\_tasks}!SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}}
+\doxysubsubsection{\texorpdfstring{consume\_tasks()}{consume\_tasks()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a27d475064a80fd56ab776dae99dfd151} 
+Somin\+AI.\+crawler.\+crawler.\+Crawler.\+consume\+\_\+tasks (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asynchronously consumes tasks from the RabbitMQ queue.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a87199a9a435bb917d874dfebf2af6cc7}\index{SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}!process\_task@{process\_task}}
+\index{process\_task@{process\_task}!SominAI.crawler.crawler.Crawler@{SominAI.crawler.crawler.Crawler}}
+\doxysubsubsection{\texorpdfstring{process\_task()}{process\_task()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1crawler_1_1Crawler_a87199a9a435bb917d874dfebf2af6cc7} 
+Somin\+AI.\+crawler.\+crawler.\+Crawler.\+process\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{dict}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Processes a single task message asynchronously.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+crawler/crawler.\+py\end{DoxyCompactItemize}

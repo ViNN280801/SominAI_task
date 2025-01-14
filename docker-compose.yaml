@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - __KBOT_TOKEN=${__KBOT_TOKEN}
+      - __KCHAT_ID=${__KCHAT_ID}
+      - CHROME_BIN=/usr/bin/chromium-browser
+      - CHROMEDRIVER_BIN=/usr/bin/chromedriver
+    volumes:
+      - .:/app
+    depends_on:
+      - rabbitmq
+      - redis
+    shm_size: "1gb"
+    entrypoint: >
+      sh -c "
+      while ! nc -z rabbitmq 5672; do
+        echo 'Waiting for RabbitMQ...';
+        sleep 2;
+      done;
+      while ! nc -z redis 6379; do
+        echo 'Waiting for Redis...';
+        sleep 2;
+      done;
+      python main.py"
+
+  rabbitmq:
+    image: "rabbitmq:3-management-alpine"
+    container_name: rabbitmq
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5

@@ -1,0 +1,36 @@
+\doxysection{Somin\+AI.\+configs.\+config\+\_\+loader.\+Config\+Loader Class Reference}
+\hypertarget{classSominAI_1_1configs_1_1config__loader_1_1ConfigLoader}{}\label{classSominAI_1_1configs_1_1config__loader_1_1ConfigLoader}\index{SominAI.configs.config\_loader.ConfigLoader@{SominAI.configs.config\_loader.ConfigLoader}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classSominAI_1_1configs_1_1config__loader_1_1ConfigLoader_adc7ab71cca850c13ccd5ce7c98141c2c}{load\+\_\+config}} (str file\+\_\+path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A utility class to load and parse YAML configuration files.
+
+This class provides a static method to load YAML files and ensures
+proper error handling for missing files and invalid formats.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1configs_1_1config__loader_1_1ConfigLoader_adc7ab71cca850c13ccd5ce7c98141c2c}\index{SominAI.configs.config\_loader.ConfigLoader@{SominAI.configs.config\_loader.ConfigLoader}!load\_config@{load\_config}}
+\index{load\_config@{load\_config}!SominAI.configs.config\_loader.ConfigLoader@{SominAI.configs.config\_loader.ConfigLoader}}
+\doxysubsubsection{\texorpdfstring{load\_config()}{load\_config()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1configs_1_1config__loader_1_1ConfigLoader_adc7ab71cca850c13ccd5ce7c98141c2c} 
+ dict Somin\+AI.\+configs.\+config\+\_\+loader.\+Config\+Loader.\+load\+\_\+config (\begin{DoxyParamCaption}\item[{str}]{file\+\_\+path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Loads a YAML configuration file.
+
+:param file_path: Path to the YAML file.
+:return: Configuration as a dictionary.
+:raises ConfigFileNotFoundError: If the file does not exist.
+:raises ConfigFileFormatError: If the YAML format is invalid.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+configs/config\+\_\+loader.\+py\end{DoxyCompactItemize}
