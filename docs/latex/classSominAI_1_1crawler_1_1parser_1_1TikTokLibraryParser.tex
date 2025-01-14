@@ -1,0 +1,90 @@
+\doxysection{Somin\+AI.\+crawler.\+parser.\+Tik\+Tok\+Library\+Parser Class Reference}
+\hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser}{}\label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser}\index{SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_af77351e5478816cb99139cfdca8b4536}\label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_af77351e5478816cb99139cfdca8b4536} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+str \mbox{\hyperlink{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_ad11c2958ea67b3b87267609691f00312}{build\+\_\+query}} (self, str region, str adv\+\_\+name, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\item 
+str \mbox{\hyperlink{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a0b024f26aa053840c88bb55a0dce379b}{fetch\+\_\+data}} (self, str url)
+\item 
+list\mbox{[}dict\mbox{]} \mbox{\hyperlink{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a5acbb4743f33e4991a5cd480cd3b90f5}{parse\+\_\+data}} (self, str html\+\_\+content)
+\item 
+list\mbox{[}dict\mbox{]} \mbox{\hyperlink{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a10746c76300af5664659a978f6a3512a}{search\+\_\+ads}} (self, str region, str adv\+\_\+name, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_ab1ec34c077bd50d1048141a0c22a3af3}\label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_ab1ec34c077bd50d1048141a0c22a3af3} 
+{\bfseries logger} = \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}{Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a3e48a784c1a35be28491a9bfcc76c85e}\label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a3e48a784c1a35be28491a9bfcc76c85e} 
+str {\bfseries BASE\+\_\+\+URL} = "{}https\+://library.\+tiktok.\+com/ads"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A universal parser for the TikTok Library search API.
+Dynamically constructs URLs based on given parameters.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_ad11c2958ea67b3b87267609691f00312}\index{SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}!build\_query@{build\_query}}
+\index{build\_query@{build\_query}!SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}}
+\doxysubsubsection{\texorpdfstring{build\_query()}{build\_query()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_ad11c2958ea67b3b87267609691f00312} 
+ str Somin\+AI.\+crawler.\+parser.\+Tik\+Tok\+Library\+Parser.\+build\+\_\+query (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{region}{, }\item[{str}]{adv\+\_\+name}{, }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kwargs}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructs a TikTok Library query URL.
+
+:param region: The region code (e.g., "BE", "US", "AT").
+:param adv_name: The advertiser's name or keyword for search.
+:param kwargs: Optional parameters for the query (e.g., start_time, end_time, sort_type, etc.).
+:return: Constructed URL for the TikTok Library search.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a0b024f26aa053840c88bb55a0dce379b}\index{SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}!fetch\_data@{fetch\_data}}
+\index{fetch\_data@{fetch\_data}!SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}}
+\doxysubsubsection{\texorpdfstring{fetch\_data()}{fetch\_data()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a0b024f26aa053840c88bb55a0dce379b} 
+ str Somin\+AI.\+crawler.\+parser.\+Tik\+Tok\+Library\+Parser.\+fetch\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{url}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fetches the HTML content of the TikTok Library page by navigating to the URL.
+
+:param url: The URL of the TikTok Library search page.
+:return: HTML content of the page as a string.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a5acbb4743f33e4991a5cd480cd3b90f5}\index{SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}!parse\_data@{parse\_data}}
+\index{parse\_data@{parse\_data}!SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}}
+\doxysubsubsection{\texorpdfstring{parse\_data()}{parse\_data()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a5acbb4743f33e4991a5cd480cd3b90f5} 
+ list\mbox{[}dict\mbox{]} Somin\+AI.\+crawler.\+parser.\+Tik\+Tok\+Library\+Parser.\+parse\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{html\+\_\+content}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parses HTML content to extract advertisement details.
+
+:param html_content: HTML content fetched from TikTok Library.
+:return: List of parsed advertisements.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a10746c76300af5664659a978f6a3512a}\index{SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}!search\_ads@{search\_ads}}
+\index{search\_ads@{search\_ads}!SominAI.crawler.parser.TikTokLibraryParser@{SominAI.crawler.parser.TikTokLibraryParser}}
+\doxysubsubsection{\texorpdfstring{search\_ads()}{search\_ads()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1crawler_1_1parser_1_1TikTokLibraryParser_a10746c76300af5664659a978f6a3512a} 
+ list\mbox{[}dict\mbox{]} Somin\+AI.\+crawler.\+parser.\+Tik\+Tok\+Library\+Parser.\+search\+\_\+ads (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{region}{, }\item[{str}]{adv\+\_\+name}{, }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kwargs}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Searches for ads in the TikTok Library with the given parameters.
+
+:param region: The region code (e.g., "BE").
+:param adv_name: The advertiser's name or keyword for search.
+:param kwargs: Additional parameters for customizing the search.
+:return: List of parsed advertisements.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+crawler/parser.\+py\end{DoxyCompactItemize}

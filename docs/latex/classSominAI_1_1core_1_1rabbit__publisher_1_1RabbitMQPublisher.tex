@@ -1,0 +1,136 @@
+\doxysection{Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher Class Reference}
+\hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher}{}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_ad488e5c52194caed89cd593a73747544}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str config\+\_\+path="{}configs/rabbitmq.\+yaml"{})
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a66baebd1adfb5a9b79c3472bcbf6cfec}{connect}} (self)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a9deb3b2a3de290bd396f0f4f783e95cf}{send\+\_\+task}} (self, str task\+\_\+id, str keyword)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_aa4d4c5495fd90b536add79a1496df7d7}{publish}} (self, str queue, dict message)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_ad954af36548fe065669299e916a37c2c}{close\+\_\+connection}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a8d1864a4da31c9b9caaf11cdd8d4761e}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a8d1864a4da31c9b9caaf11cdd8d4761e} 
+{\bfseries host} = config.\+get("{}host"{}, "{}localhost"{})
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_aa2c4e0c97415f87bd0add333e45173ed}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_aa2c4e0c97415f87bd0add333e45173ed} 
+{\bfseries queue} = config.\+get("{}queue"{}, "{}task\+\_\+queue"{})
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a6400563028893d5b77d5c13d7c2c9332}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a6400563028893d5b77d5c13d7c2c9332} 
+{\bfseries username} = config.\+get("{}username"{}, "{}guest"{})
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a96796b77d3c2c52757c9258c0fbbe384}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a96796b77d3c2c52757c9258c0fbbe384} 
+{\bfseries password} = config.\+get("{}password"{}, "{}guest"{})
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_abf8246c4c0dbcf94b0e8f89bdb7e403b}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_abf8246c4c0dbcf94b0e8f89bdb7e403b} 
+{\bfseries logger} = \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}{Logger}}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_afbd74c5a777596402369ec696d044ddf}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_afbd74c5a777596402369ec696d044ddf} 
+{\bfseries exception\+\_\+handler} = \mbox{\hyperlink{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler}{Exception\+Handler}}()
+\item 
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_acd323d99598fe232ae4fa09797bafe38}\label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_acd323d99598fe232ae4fa09797bafe38} 
+{\bfseries channel}
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a1e1a04f833d2adbc96764f1a97fec74a}{connection}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_acbedb4fd70aba06645f0a66af2bb768e}{\+\_\+ensure\+\_\+channel\+\_\+initialized}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Handles asynchronous communication with RabbitMQ for task publishing.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_ad488e5c52194caed89cd593a73747544}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_ad488e5c52194caed89cd593a73747544} 
+Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str }]{config\+\_\+path}{ = {\ttfamily "{}configs/rabbitmq.yaml"{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the RabbitMQPublisher with configuration from a file.
+
+:param config_path: Path to the RabbitMQ configuration file.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_acbedb4fd70aba06645f0a66af2bb768e}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!\_ensure\_channel\_initialized@{\_ensure\_channel\_initialized}}
+\index{\_ensure\_channel\_initialized@{\_ensure\_channel\_initialized}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{\_ensure\_channel\_initialized()}{\_ensure\_channel\_initialized()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_acbedb4fd70aba06645f0a66af2bb768e} 
+ None Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+\_\+ensure\+\_\+channel\+\_\+initialized (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check whether the RabbitMQ channel is initialized or not.
+
+:raise RabbitMQConnectionError: In case if channel is 'None'.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_ad954af36548fe065669299e916a37c2c}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!close\_connection@{close\_connection}}
+\index{close\_connection@{close\_connection}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{close\_connection()}{close\_connection()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_ad954af36548fe065669299e916a37c2c} 
+ None Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+close\+\_\+connection (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asynchronously closes the connection to RabbitMQ.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a66baebd1adfb5a9b79c3472bcbf6cfec}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!connect@{connect}}
+\index{connect@{connect}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a66baebd1adfb5a9b79c3472bcbf6cfec} 
+Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+connect (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asynchronously connects to RabbitMQ and declares the default queue.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_aa4d4c5495fd90b536add79a1496df7d7}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!publish@{publish}}
+\index{publish@{publish}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{publish()}{publish()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_aa4d4c5495fd90b536add79a1496df7d7} 
+ None Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+publish (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{queue}{, }\item[{dict}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Publishes a message to a specified RabbitMQ queue asynchronously.
+
+:param queue: The name of the queue.
+:param message: The message to publish (as a dictionary).
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a9deb3b2a3de290bd396f0f4f783e95cf}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!send\_task@{send\_task}}
+\index{send\_task@{send\_task}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{send\_task()}{send\_task()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a9deb3b2a3de290bd396f0f4f783e95cf} 
+ None Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+send\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{, }\item[{str}]{keyword}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Publishes a task message to the RabbitMQ queue asynchronously.
+
+:param task_id: Unique ID of the task.
+:param keyword: Keyword for the task.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a1e1a04f833d2adbc96764f1a97fec74a}\index{SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}!connection@{connection}}
+\index{connection@{connection}!SominAI.core.rabbit\_publisher.RabbitMQPublisher@{SominAI.core.rabbit\_publisher.RabbitMQPublisher}}
+\doxysubsubsection{\texorpdfstring{connection}{connection}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher_a1e1a04f833d2adbc96764f1a97fec74a} 
+Somin\+AI.\+core.\+rabbit\+\_\+publisher.\+Rabbit\+MQPublisher.\+connection}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ await\ aio\_pika.connect\_robust(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{"{}amqp://\{self.username\}:\{self.password\}@\{self.host\}/"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/rabbit\+\_\+publisher.\+py\end{DoxyCompactItemize}

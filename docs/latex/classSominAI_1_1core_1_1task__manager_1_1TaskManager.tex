@@ -1,0 +1,105 @@
+\doxysection{Somin\+AI.\+core.\+task\+\_\+manager.\+Task\+Manager Class Reference}
+\hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager}{}\label{classSominAI_1_1core_1_1task__manager_1_1TaskManager}\index{SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ae8aefffcbc644950b2738ea6c5f004b2}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str redis\+\_\+config\+\_\+path, str rabbit\+\_\+config\+\_\+path)
+\item 
+str \mbox{\hyperlink{classSominAI_1_1core_1_1task__manager_1_1TaskManager_aef1b299500bc93a7b9197ef30fccbc00}{create\+\_\+task}} (self, str keyword)
+\item 
+\mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ae083ef43f25931d01004cee42e60f905}{get\+\_\+task\+\_\+status}} (self, str task\+\_\+id)
+\item 
+\mbox{\hyperlink{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a6db9ce1314b4bc63c45ee7562f136d70}{update\+\_\+task\+\_\+status}} (self, str task\+\_\+id, str status, dict\texorpdfstring{$\vert$}{|}None result=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ac76af5dcf4f60a58abec3be4ae725e1b}\label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ac76af5dcf4f60a58abec3be4ae725e1b} 
+{\bfseries redis\+\_\+manager} = \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager}{Redis\+Manager}}(redis\+\_\+config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a2ebad52278cd3a5e579fb2d421438e2f}\label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a2ebad52278cd3a5e579fb2d421438e2f} 
+{\bfseries rabbit\+\_\+publisher} = \mbox{\hyperlink{classSominAI_1_1core_1_1rabbit__publisher_1_1RabbitMQPublisher}{Rabbit\+MQPublisher}}(rabbit\+\_\+config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ac570cc4b458b3faf64c4141c69efdc68}\label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ac570cc4b458b3faf64c4141c69efdc68} 
+{\bfseries logger} = \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}{Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a676dece73ebce6e8888db13ccfeccf44}{\+\_\+is\+\_\+valid\+\_\+task\+\_\+data}} (self, \mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}}\texorpdfstring{$\vert$}{|}dict data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Manages tasks, including creating, updating statuses, and storing results.
+
+This class interacts with Redis for status management and RabbitMQ for
+task queueing.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ae8aefffcbc644950b2738ea6c5f004b2}\index{SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ae8aefffcbc644950b2738ea6c5f004b2} 
+Somin\+AI.\+core.\+task\+\_\+manager.\+Task\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{redis\+\_\+config\+\_\+path}{, }\item[{str}]{rabbit\+\_\+config\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the TaskManager with dependencies.
+
+:param redis_config_path: Path to the Redis configuration file.
+:param rabbit_config_path: Path to the RabbitMQ configuration file.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a676dece73ebce6e8888db13ccfeccf44}\index{SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}!\_is\_valid\_task\_data@{\_is\_valid\_task\_data}}
+\index{\_is\_valid\_task\_data@{\_is\_valid\_task\_data}!SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}}
+\doxysubsubsection{\texorpdfstring{\_is\_valid\_task\_data()}{\_is\_valid\_task\_data()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a676dece73ebce6e8888db13ccfeccf44} 
+ bool Somin\+AI.\+core.\+task\+\_\+manager.\+Task\+Manager.\+\_\+is\+\_\+valid\+\_\+task\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{\mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}} \texorpdfstring{$\vert$}{|} dict}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Validates the structure of task data.
+
+:param data: Data to validate.
+:return: True if valid, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_aef1b299500bc93a7b9197ef30fccbc00}\index{SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}!create\_task@{create\_task}}
+\index{create\_task@{create\_task}!SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}}
+\doxysubsubsection{\texorpdfstring{create\_task()}{create\_task()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_aef1b299500bc93a7b9197ef30fccbc00} 
+ str Somin\+AI.\+core.\+task\+\_\+manager.\+Task\+Manager.\+create\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{keyword}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asynchronously creates a new task and adds it to the queue.
+
+:param keyword: Keyword to be used for crawling.
+:return: Unique task ID.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ae083ef43f25931d01004cee42e60f905}\index{SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}!get\_task\_status@{get\_task\_status}}
+\index{get\_task\_status@{get\_task\_status}!SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}}
+\doxysubsubsection{\texorpdfstring{get\_task\_status()}{get\_task\_status()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_ae083ef43f25931d01004cee42e60f905} 
+ \mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}} \texorpdfstring{$\vert$}{|} None Somin\+AI.\+core.\+task\+\_\+manager.\+Task\+Manager.\+get\+\_\+task\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the status of a task.
+
+:param task_id: Unique ID of the task.
+:return: Task status and details if found, otherwise None.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a6db9ce1314b4bc63c45ee7562f136d70}\index{SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}!update\_task\_status@{update\_task\_status}}
+\index{update\_task\_status@{update\_task\_status}!SominAI.core.task\_manager.TaskManager@{SominAI.core.task\_manager.TaskManager}}
+\doxysubsubsection{\texorpdfstring{update\_task\_status()}{update\_task\_status()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1task__manager_1_1TaskManager_a6db9ce1314b4bc63c45ee7562f136d70} 
+Somin\+AI.\+core.\+task\+\_\+manager.\+Task\+Manager.\+update\+\_\+task\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{, }\item[{str}]{status}{, }\item[{dict \texorpdfstring{$\vert$}{|} None }]{result}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asynchronously updates the status and result of a task.
+
+:param task_id: Unique ID of the task.
+:param status: New status of the task (e.g., 'completed', 'failed').
+:param result: Result of the task (optional).
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/task\+\_\+manager.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\doxysection{Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager Class Reference}
+\hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager}{}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_af02d04f9640247668aa5e30b0b2997c4}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_af02d04f9640247668aa5e30b0b2997c4} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str config\+\_\+path="{}configs/config.\+yaml"{})
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a00d1c22dba5e49ca4054b152b7f91fab}{connect}} (self)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a68ddc3f1ff1a2050c168a03ab81c8733}{close}} (self)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a824fb1469a7d7ced8ddd12c924c88cfb}{set\+\_\+status}} (self, str task\+\_\+id, \mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}} task\+\_\+data)
+\item 
+dict\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a9fffd5c7daabe896cf66672861a5d8d1}{get\+\_\+status}} (self, str task\+\_\+id)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_ac83532dac870cb59f792655261eeb417}{update\+\_\+task\+\_\+status}} (self, str task\+\_\+id, str status, \mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}}\texorpdfstring{$\vert$}{|}None result=None)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a490084790ef634808961bb243cc3a34b}{delete\+\_\+task}} (self, str task\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a72785021c54aef343dad0db05bac3c6e}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a72785021c54aef343dad0db05bac3c6e} 
+{\bfseries host} = config.\+get("{}host"{}, "{}localhost"{})
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_af09b2d98969c4386376ffea216b81bb3}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_af09b2d98969c4386376ffea216b81bb3} 
+{\bfseries port} = config.\+get("{}port"{}, 6379)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_aaaa0d4d88ab30d2686bb5062447def9b}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_aaaa0d4d88ab30d2686bb5062447def9b} 
+{\bfseries db} = config.\+get("{}db"{}, 0)
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_adc01669281cf617cf962c9287a79e8bb}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_adc01669281cf617cf962c9287a79e8bb} 
+{\bfseries logger} = \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}{Logger}}
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a6fc966ed18fa01ea497730e1b6b3a9df}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a6fc966ed18fa01ea497730e1b6b3a9df} 
+{\bfseries exception\+\_\+handler} = \mbox{\hyperlink{classSominAI_1_1modules_1_1exception__handler_1_1exception__handler_1_1ExceptionHandler}{Exception\+Handler}}()
+\item 
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_ad5486d7c74e6c1f38b81116a3484acff}\label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_ad5486d7c74e6c1f38b81116a3484acff} 
+redis.\+Redis\texorpdfstring{$\vert$}{|}None {\bfseries redis\+\_\+client} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Asynchronous manager for interactions with the Redis database for task status storage.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a68ddc3f1ff1a2050c168a03ab81c8733}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}!close@{close}}
+\index{close@{close}!SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a68ddc3f1ff1a2050c168a03ab81c8733} 
+ None Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager.\+close (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Closes the Redis connection asynchronously.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a00d1c22dba5e49ca4054b152b7f91fab}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}!connect@{connect}}
+\index{connect@{connect}!SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a00d1c22dba5e49ca4054b152b7f91fab} 
+ None Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager.\+connect (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asynchronously connects to the Redis server.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a490084790ef634808961bb243cc3a34b}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}!delete\_task@{delete\_task}}
+\index{delete\_task@{delete\_task}!SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection{\texorpdfstring{delete\_task()}{delete\_task()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a490084790ef634808961bb243cc3a34b} 
+ None Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager.\+delete\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deletes a task from Redis asynchronously.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a9fffd5c7daabe896cf66672861a5d8d1}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}!get\_status@{get\_status}}
+\index{get\_status@{get\_status}!SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection{\texorpdfstring{get\_status()}{get\_status()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a9fffd5c7daabe896cf66672861a5d8d1} 
+ dict \texorpdfstring{$\vert$}{|} None Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager.\+get\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the status of a task from Redis asynchronously.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a824fb1469a7d7ced8ddd12c924c88cfb}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}!set\_status@{set\_status}}
+\index{set\_status@{set\_status}!SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection{\texorpdfstring{set\_status()}{set\_status()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_a824fb1469a7d7ced8ddd12c924c88cfb} 
+ None Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager.\+set\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{, }\item[{\mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}}}]{task\+\_\+data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stores the status of a task in Redis asynchronously.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_ac83532dac870cb59f792655261eeb417}\index{SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}!update\_task\_status@{update\_task\_status}}
+\index{update\_task\_status@{update\_task\_status}!SominAI.core.redis\_manager.RedisManager@{SominAI.core.redis\_manager.RedisManager}}
+\doxysubsubsection{\texorpdfstring{update\_task\_status()}{update\_task\_status()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1core_1_1redis__manager_1_1RedisManager_ac83532dac870cb59f792655261eeb417} 
+ None Somin\+AI.\+core.\+redis\+\_\+manager.\+Redis\+Manager.\+update\+\_\+task\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{task\+\_\+id}{, }\item[{str}]{status}{, }\item[{\mbox{\hyperlink{classSominAI_1_1utils_1_1types_1_1TaskData}{Task\+Data}} \texorpdfstring{$\vert$}{|} None }]{result}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Updates the status and result of a task in Redis asynchronously.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/redis\+\_\+manager.\+py\end{DoxyCompactItemize}

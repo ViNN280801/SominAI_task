@@ -1,0 +1,150 @@
+\doxysection{Somin\+AI.\+modules.\+logger.\+logger.\+Logger Class Reference}
+\hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}{}\label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa32166e273a1a7fc2fd241c29078b306}{configure\+\_\+logger}} (cls, str name, dict\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None config\+\_\+path=None, \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1log__levels_1_1LogLevel}{Log\+Level}} level=Log\+Level.\+INFO, str\texorpdfstring{$\vert$}{|}None log\+\_\+file=None)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a693ceb60bf89b2dcbac8f1d34bb17efe}{log}} (cls, message, \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1log__levels_1_1LogLevel}{Log\+Level}} level)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa40b81bd289deef769f703ff96ffabe3}{log\+\_\+info}} (cls, message)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ae642cc662dd8c0ba2cc53312f56a86f8}{log\+\_\+debug}} (cls, message)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_af07ed8119148761b7748f72401f6e82d}{log\+\_\+warning}} (cls, message)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a275a8cae4c2a624184ea96e14e1d3d17}{log\+\_\+error}} (cls, message)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_acbc199b99a021820a176a5b84abb794a}{log\+\_\+critical}} (cls, message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a501aac8667fa768e99f65262e14a8467}\label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a501aac8667fa768e99f65262e14a8467} 
+dict {\bfseries \+\_\+logger} = cls.\+\_\+load\+\_\+yaml\+\_\+config(config\+\_\+path)
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ada4ec4e28478dcb9497535fc785695c9}\label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ada4ec4e28478dcb9497535fc785695c9} 
+str {\bfseries \+\_\+logger} = cls.\+\_\+validate\+\_\+message(message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a3b3d871f303b6b54a69030983f35ac1f}{\+\_\+load\+\_\+yaml\+\_\+config}} (cls, str config\+\_\+path)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ad7b4d349877811768fc011fb4e8dbfc0}{\+\_\+ensure\+\_\+log\+\_\+directory}} (cls)
+\item 
+None \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_afd00fc7f7238b6be47cd8b49a09e746c}{\+\_\+validate\+\_\+log\+\_\+level}} (cls, \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1log__levels_1_1LogLevel}{Log\+Level}} level)
+\item 
+str \mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a85399dfc3235ffb6a898b879633594da}{\+\_\+validate\+\_\+message}} (cls, message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a545eae10bef2641eea2bcb8b2555f223}\label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a545eae10bef2641eea2bcb8b2555f223} 
+logging {\bfseries \+\_\+logger} = None
+\item 
+\Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa9383737b2d7efd165db16a3e7460c4f}\label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa9383737b2d7efd165db16a3e7460c4f} 
+str {\bfseries \+\_\+log\+\_\+file} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A universal logger module that provides configurable logging capabilities.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ad7b4d349877811768fc011fb4e8dbfc0}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!\_ensure\_log\_directory@{\_ensure\_log\_directory}}
+\index{\_ensure\_log\_directory@{\_ensure\_log\_directory}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{\_ensure\_log\_directory()}{\_ensure\_log\_directory()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ad7b4d349877811768fc011fb4e8dbfc0} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+\_\+ensure\+\_\+log\+\_\+directory (\begin{DoxyParamCaption}\item[{}]{cls}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Ensures that the log directory exists. If it doesn't, creates it.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a3b3d871f303b6b54a69030983f35ac1f}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!\_load\_yaml\_config@{\_load\_yaml\_config}}
+\index{\_load\_yaml\_config@{\_load\_yaml\_config}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{\_load\_yaml\_config()}{\_load\_yaml\_config()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a3b3d871f303b6b54a69030983f35ac1f} 
+ dict Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+\_\+load\+\_\+yaml\+\_\+config (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{str}]{config\+\_\+path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Loads the YAML configuration file for logging using ConfigLoader.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_afd00fc7f7238b6be47cd8b49a09e746c}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!\_validate\_log\_level@{\_validate\_log\_level}}
+\index{\_validate\_log\_level@{\_validate\_log\_level}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{\_validate\_log\_level()}{\_validate\_log\_level()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_afd00fc7f7238b6be47cd8b49a09e746c} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+\_\+validate\+\_\+log\+\_\+level (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{\mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1log__levels_1_1LogLevel}{Log\+Level}}}]{level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Ensures the provided log level is valid.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a85399dfc3235ffb6a898b879633594da}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!\_validate\_message@{\_validate\_message}}
+\index{\_validate\_message@{\_validate\_message}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{\_validate\_message()}{\_validate\_message()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a85399dfc3235ffb6a898b879633594da} 
+ str Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+\_\+validate\+\_\+message (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Validates and converts the message to a string.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa32166e273a1a7fc2fd241c29078b306}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!configure\_logger@{configure\_logger}}
+\index{configure\_logger@{configure\_logger}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{configure\_logger()}{configure\_logger()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa32166e273a1a7fc2fd241c29078b306} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+configure\+\_\+logger (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{str}]{name}{, }\item[{dict \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{config\+\_\+path}{ = {\ttfamily None}, }\item[{\mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1log__levels_1_1LogLevel}{Log\+Level}} }]{level}{ = {\ttfamily LogLevel.INFO}, }\item[{str \texorpdfstring{$\vert$}{|} None }]{log\+\_\+file}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Configures the logger using a YAML configuration file or defaults.
+
+:param name:        Name of the logger.
+:param config_path: Path/dict to the YAML configuration. If None, defaults are used.
+:param level:       Logging level if no config is provided.
+:param log_file:    File path for log output (optional).
+:raises LoggerConfigError: If the config fails to load or apply.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a693ceb60bf89b2dcbac8f1d34bb17efe}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!log@{log}}
+\index{log@{log}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a693ceb60bf89b2dcbac8f1d34bb17efe} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+log (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{, }\item[{\mbox{\hyperlink{classSominAI_1_1modules_1_1logger_1_1log__levels_1_1LogLevel}{Log\+Level}}}]{level}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs a message at the specified log level.
+\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_acbc199b99a021820a176a5b84abb794a}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!log\_critical@{log\_critical}}
+\index{log\_critical@{log\_critical}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log\_critical()}{log\_critical()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_acbc199b99a021820a176a5b84abb794a} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+log\+\_\+critical (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs a critical message.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ae642cc662dd8c0ba2cc53312f56a86f8}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!log\_debug@{log\_debug}}
+\index{log\_debug@{log\_debug}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log\_debug()}{log\_debug()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_ae642cc662dd8c0ba2cc53312f56a86f8} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+log\+\_\+debug (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs a debug message.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a275a8cae4c2a624184ea96e14e1d3d17}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!log\_error@{log\_error}}
+\index{log\_error@{log\_error}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log\_error()}{log\_error()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_a275a8cae4c2a624184ea96e14e1d3d17} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+log\+\_\+error (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error message.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa40b81bd289deef769f703ff96ffabe3}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!log\_info@{log\_info}}
+\index{log\_info@{log\_info}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log\_info()}{log\_info()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_aa40b81bd289deef769f703ff96ffabe3} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+log\+\_\+info (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an informational message.\end{DoxyVerb}
+ \Hypertarget{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_af07ed8119148761b7748f72401f6e82d}\index{SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}!log\_warning@{log\_warning}}
+\index{log\_warning@{log\_warning}!SominAI.modules.logger.logger.Logger@{SominAI.modules.logger.logger.Logger}}
+\doxysubsubsection{\texorpdfstring{log\_warning()}{log\_warning()}}
+{\footnotesize\ttfamily \label{classSominAI_1_1modules_1_1logger_1_1logger_1_1Logger_af07ed8119148761b7748f72401f6e82d} 
+ None Somin\+AI.\+modules.\+logger.\+logger.\+Logger.\+log\+\_\+warning (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{message}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs a warning message.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modules/logger/logger.\+py\end{DoxyCompactItemize}
