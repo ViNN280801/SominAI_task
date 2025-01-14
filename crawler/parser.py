@@ -52,27 +52,38 @@ class TikTokLibraryParser:
 
         options = Options()
         options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")  # Required for running in Docker
+        options.add_argument(
+            "--disable-dev-shm-usage"
+        )  # To handle shared memory issues
+        options.add_argument("--disable-gpu")
+        options.add_argument("--disable-software-rasterizer")
         driver = webdriver.Chrome(options=options)
-        driver.get(url)
+        try:
+            driver.get(url)
 
-        # Possibly scroll or wait until certain elements appear
-        SCROLL_PAUSE = 2
-        last_height = driver.execute_script("return document.body.scrollHeight")
-        while True:
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            sleep(SCROLL_PAUSE)
-            new_height = driver.execute_script("return document.body.scrollHeight")
-            if new_height == last_height:
-                break
-            last_height = new_height
+            # Scroll until the page is fully loaded
+            SCROLL_PAUSE = 2
+            last_height = driver.execute_script("return document.body.scrollHeight")
+            while True:
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                sleep(SCROLL_PAUSE)
+                new_height = driver.execute_script("return document.body.scrollHeight")
+                if new_height == last_height:
+                    break
+                last_height = new_height
 
-        # Or wait for ad containers to appear
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".ad_card"))
-        )
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, ".ad_card"))
+            )
 
-        page_source = driver.page_source
-        driver.quit()
+            page_source = driver.page_source
+        except Exception as e:
+            self.logger.log_error(f"Error fetching data from URL: {e}")
+            raise
+        finally:
+            driver.quit()
+
         return page_source
 
     def parse_data(self, html_content: str) -> list[dict]:
