@@ -1,7 +1,10 @@
-quart         # Asynchronous web framework, used for creating the HTTP endpoints '/crawl' and '/result/{id}' with full asyncio support.
-pytest        # Python framework used for testing.
-pytest-async  # Python async framework used for testing.
-requests      # Simple HTTPS lib for making API requests.
-aioredis      # Async python client for Redis, used for interacting with the Redis database.
-aio_pika      # Async RabbitMQ client library, provides an efficient way to publish and consume messages using asyncio for better performance.
-selenium      # To use google chrome headers for crawling.
+quart           # Asynchronous web framework, used for creating the HTTP endpoints '/crawl' and '/result/{id}' with full asyncio support.
+pytest          # Python framework used for testing.
+pytest-async    # Python async framework used for testing.
+PyYAML          # Python yaml format support.
+requests        # Simple HTTPS lib for making API requests.
+redis           # Sync python client for Redis, used for interacting with the Redis database.
+aioredis        # Async python client for Redis, used for interacting with the Redis database.
+aio_pika        # Async RabbitMQ client library, provides an efficient way to publish and consume messages using asyncio for better performance.
+selenium        # To use google chrome headers for crawling.
+beautifulsoup4  # Library for parsing HTML and XML documents, used for extracting data from web pages.
