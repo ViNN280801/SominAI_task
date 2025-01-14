@@ -6,7 +6,7 @@ app:
 default_region: all # Default all regions for TikTok Library searches
 
 redis:
-  host: 127.0.0.1
+  host: redis
   port: 6379
   db: 0
   password: null
